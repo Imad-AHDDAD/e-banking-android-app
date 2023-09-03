@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/blury_background"
+        android:alpha="0.7"
+        android:scaleType="centerCrop"/>
+
+    <ProgressBar
+        android:id="@+id/progressbarSettings"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:indeterminateTint="@color/g_gray700"
+        android:visibility="gone"/>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <TextView
+            android:id="@+id/tvLetsRegister"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/h4"
+            android:layout_marginTop="50dp"
+            android:drawablePadding="6dp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:text="Transaction"
+            android:textAlignment="center"
+            android:gravity="center"
+            android:textSize="35sp"
+            />
+
+        <TextView
+            android:id="@+id/status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/h2"
+            app:layout_constraintStart_toStartOf="@id/tvLetsRegister"
+            app:layout_constraintTop_toBottomOf="@id/tvLetsRegister"
+            app:layout_constraintEnd_toEndOf="@id/tvLetsRegister"
+            android:textAlignment="center"
+            android:gravity="center"
+            android:text="status"
+            android:layout_marginTop="-8dp"
+            />
+
+        <EditText
+            android:id="@+id/accountNumber"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/edittextHeight"
+            app:layout_constraintStart_toStartOf="@id/guidelineRegisterLeft"
+            app:layout_constraintEnd_toEndOf="@id/guidelineRegisterRight"
+            app:layout_constraintTop_toBottomOf="@id/tvLetsRegister"
+            style="@style/editText"
+            android:hint="account number"
+            android:layout_marginTop="50dp"/>
+
+        <EditText
+            android:id="@+id/amount"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/edittextHeight"
+            app:layout_constraintStart_toStartOf="@id/guidelineRegisterLeft"
+            app:layout_constraintEnd_toEndOf="@id/guidelineRegisterRight"
+            app:layout_constraintTop_toBottomOf="@id/accountNumber"
+            style="@style/editText"
+            android:hint="amount"
+            android:layout_marginTop="10dp"/>
+
+        <EditText
+            android:id="@+id/motif"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/edittextHeight"
+            app:layout_constraintStart_toStartOf="@id/guidelineRegisterLeft"
+            app:layout_constraintEnd_toEndOf="@id/guidelineRegisterRight"
+            app:layout_constraintTop_toBottomOf="@id/amount"
+            style="@style/editText"
+            android:hint="motif"
+            android:inputType="textEmailAddress"
+            android:layout_marginTop="10dp"/>
+
+        <br.com.simplepass.loadingbutton.customViews.CircularProgressButton
+            android:id="@+id/send"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/mediumButtonHeight"
+            style="@style/blueButtonStyle"
+            app:layout_constraintTop_toBottomOf="@id/motif"
+            app:layout_constraintStart_toStartOf="@id/guidelineRegisterLeft"
+            app:layout_constraintEnd_toEndOf="@id/guidelineRegisterRight"
+            android:layout_marginTop="15dp"
+            android:text="Send"
+            app:spinning_bar_color="@color/white"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelineRegisterLeft"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.09" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelineRegisterRight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.91" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</FrameLayout>
